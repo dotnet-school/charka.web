@@ -24,10 +24,10 @@ Resources:
   # login using azure cli
   az login
   
-  RESOURCE_GROUP=devops-aks
-  CLUSTER_NAME=devops-aks
+  RESOURCE_GROUP=chakra.web
+  CLUSTER_NAME=chakra.web
   REGION=westeurope
-  REGISTRY_NAME=devopsaksregistry
+  REGISTRY_NAME=chakra.web
   
   # Create resource
   az group create --name $RESOURCE_GROUP --location $REGION
@@ -64,24 +64,24 @@ Resources:
 
 - Now that we have a kubernetes cluster, we will now create a new environment: 
 
-  ![image-20200926225427043](/Users/dawn/projects/dotnet-school/devops-aks/docs/images/environments.png)
+  ![image-20200926225427043](./docs/images/environments.png)
 
 
 
 - Add kubernetes resource to the environment 
 
-  ![image-20200926225628492](/Users/dawn/projects/dotnet-school/devops-aks/docs/images/k8-env.png)
+  ![image-20200926225628492](./docs/images/k8-env.png)
 
 
 - Select our kubernetes cluster  and create enrironment : 
 
-  ![image-20200926225726576](/Users/dawn/projects/dotnet-school/devops-aks/docs/images/k8-env-cluster.png)
+  ![image-20200926225726576](./docs/images/k8-env-cluster.png)
 
 
 
 - Create pipeline from template : 
 
-  ![image-20200926231033295](/Users/dawn/projects/dotnet-school/devops-aks/docs/images/pipeline-template.png)
+  ![image-20200926231033295](./docs/images/pipeline-template.png)
 
 
 
