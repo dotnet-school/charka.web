@@ -1,8 +1,9 @@
 ﻿using Chakra;
+using Chakra.Web.Requests;
+using Chakra.Web.Responses;
 using Microsoft.AspNetCore.Mvc;
-using Web.Responses;
 
-namespace Web.Controllers
+namespace Chakra.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]

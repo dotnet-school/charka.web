@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{F74532F0-7953-46AB-A5FE-B30B00A16F8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chakra.Web", "Chakra.Web\Chakra.Web.csproj", "{F74532F0-7953-46AB-A5FE-B30B00A16F8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Test", "Web.Test\Web.Test.csproj", "{A3031C5B-8FC5-40BC-B5FA-DADDC2B34E2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chakra.Web.Test", "Chakra.Web.Test\Chakra.Web.Test.csproj", "{A3031C5B-8FC5-40BC-B5FA-DADDC2B34E2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

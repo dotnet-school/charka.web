@@ -1,5 +1,5 @@
 
-namespace Web
+namespace Chakra.Web.Requests
 {
   public class CompileRequest
   {

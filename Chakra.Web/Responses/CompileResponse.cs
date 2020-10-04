@@ -1,7 +1,7 @@
 using System;
 using Chakra;
 
-namespace Web.Responses
+namespace Chakra.Web.Responses
 {
   public class CompileResponse
   {

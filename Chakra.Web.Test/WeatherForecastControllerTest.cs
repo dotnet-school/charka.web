@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace Web.Test
+namespace Chakra.Web.Test
 {
-    public class WeatherForecastControllerTest: IClassFixture<WebApplicationFactory<Web.Startup>>
+    public class WeatherForecastControllerTest: IClassFixture<WebApplicationFactory<Chakra.Web.Startup>>
     {
         private HttpClient _client { get; }
 
-        public WeatherForecastControllerTest(WebApplicationFactory<Web.Startup> fixture)
+        public WeatherForecastControllerTest(WebApplicationFactory<Chakra.Web.Startup> fixture)
         {
             _client = fixture.CreateClient();
         }

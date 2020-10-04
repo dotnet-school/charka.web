@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Web\Web.csproj" />
+    <ProjectReference Include="..\Chakra.Web\Chakra.Web.csproj" />
   </ItemGroup>
 
 </Project>

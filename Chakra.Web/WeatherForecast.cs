@@ -1,6 +1,6 @@
 using System;
 
-namespace Web
+namespace Chakra.Web
 {
     public class WeatherForecast
     {
