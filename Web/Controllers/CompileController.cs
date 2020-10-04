@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Web.Responses;
 
 namespace Web.Controllers
 {
@@ -14,9 +15,9 @@ namespace Web.Controllers
         }
         
         [HttpPut]
-        public string CompileCode(CompileRequest request)
+        public CompileResponse CompileCode(CompileRequest request)
         {
-            return string.Join(", ", request.Snippet ?? Array.Empty<string>());
+            return CompileResponse.ForSuccess(Chakra.Executor.ExecuteSnippet(request.Snippet));
         }
     }
 }
