@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Chakra.NET" Version="0.3.0" />
+    <PackageReference Include="Chakra.NET" Version="0.3.2" />
   </ItemGroup>
-
 
 </Project>

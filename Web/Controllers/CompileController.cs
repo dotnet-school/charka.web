@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Chakra;
 using Microsoft.AspNetCore.Mvc;
 using Web.Responses;
 
@@ -17,7 +17,14 @@ namespace Web.Controllers
         [HttpPut]
         public CompileResponse CompileCode(CompileRequest request)
         {
-            return CompileResponse.ForSuccess(Chakra.Executor.ExecuteSnippet(request.Snippet));
+            try
+            {
+                return CompileResponse.ForSuccess(Executor.ExecuteSnippet(request.Snippet));
+            }
+            catch (DynamicCompilationException e)
+            {
+                return CompileResponse.ForError(e);
+            }
         }
     }
 }
