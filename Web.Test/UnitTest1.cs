@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Chakra.Test
+namespace Web.Test
 {
     public class UnitTest1
     {
