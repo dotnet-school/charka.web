@@ -25,8 +25,8 @@ namespace Chakra.Web.Test.Api
       var request = new Dictionary<string, object>()
       {
               ["snippet"] = new [] {
-                      "Console.WriteLine($\"Hello\");",
-                      "Console.WriteLine($\"World!\");"
+                      @"Console.WriteLine(""Hello"");",
+                      @"Console.WriteLine(""World!"");"
               }
       };
 
@@ -39,6 +39,26 @@ namespace Chakra.Web.Test.Api
       await ExpectResponse(request, expected);
     }
 
+    [Fact]
+    public async Task ShouldReturnErrorLineNumber()
+    {
+      var request = new Dictionary<string, object>()
+      {
+              ["snippet"] = new [] {
+                      @"Console.WriteLine(""Hello"");",
+                      @"Console.WriteLine(""World!"")"
+              }
+      };
+
+      var expected = new Dictionary<string, object>() {
+              ["consoleOutput"] = null,
+              ["error"] = "CS1002: ; expected",
+              ["errorLineNumber"] = 2L
+      };
+
+      await ExpectResponse(request, expected);
+    }
+    
     private async Task ExpectResponse(Dictionary<string, object> request,  Dictionary<string, object> expected)
     {
       var response = await SendRequest("/compile", request, _client.PutAsync);
