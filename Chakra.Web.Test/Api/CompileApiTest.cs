@@ -59,7 +59,7 @@ namespace Chakra.Web.Test.Api
       await ExpectResponse(request, expected);
     }
     
-    private async Task ExpectResponse(Dictionary<string, object> request,  Dictionary<string, object> expected)
+    private async Task ExpectResponse(IDictionary<string, object> request,  IDictionary<string, object> expected)
     {
       var response = await SendRequest("/compile", request, _client.PutAsync);
       var actual = await BodyOf(response);
