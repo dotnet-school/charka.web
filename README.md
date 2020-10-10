@@ -12,6 +12,17 @@ Resources:
 
 
 
+heroku setup
+
+```
+heroku login
+heroku apps:create chakra-net --buildpack jincod/dotnetcore
+heroku config:set ASPNETCORE_ENVIRONMENT=Production
+git push heroku master
+url : https://chakra-net.herokuapp.com/compile
+```
+
+
 ### Setup project
 
 - clone this repo  https://github.com/dotnet-school/dotnet-aks
