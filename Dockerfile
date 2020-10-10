@@ -13,4 +13,4 @@ WORKDIR /app
 COPY --from=build /app .
 
 EXPOSE 80
-ENTRYPOINT ["dotnet", "Web.dll"]
+ENTRYPOINT ["dotnet", "Chakra.Web.dll"]
