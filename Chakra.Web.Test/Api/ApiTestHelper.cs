@@ -9,11 +9,12 @@ namespace Chakra.Web.Test.Api
 {
   public static class ApiTestHelper
   {
-    public static async Task<HttpResponseMessage> SendRequest(string url, IDictionary<string, object> request, Func<string, HttpContent, Task<HttpResponseMessage>> @async)
+    public static async Task<HttpResponseMessage> SendRequest(string url, object request, Func<string, HttpContent, Task<HttpResponseMessage>> @async)
     {
       return await @async(url, new StringContent(await JsonConvert.SerializeObjectAsync(request), Encoding.UTF8, "application/json"));
     }
 
+    
     public static async Task<IDictionary<string, object>> BodyOf(HttpResponseMessage response)
     {
       return JsonConvert.DeserializeObject<Dictionary<string, object>>(await response.Content.ReadAsStringAsync());
