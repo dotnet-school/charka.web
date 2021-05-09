@@ -1,12 +1,14 @@
 ﻿using Chakra;
 using Chakra.Web.Requests;
 using Chakra.Web.Responses;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chakra.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors("MyPolicy")]
     public class CompileController : ControllerBase
     {
         [HttpGet]
