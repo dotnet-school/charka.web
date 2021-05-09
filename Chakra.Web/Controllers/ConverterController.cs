@@ -1,12 +1,16 @@
 using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using Chakra.Web.Requests;
 using Chakra.Web.Responses;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chakra.Web.Controllers
 {
   [ApiController]
   [Route("convert")]
+  [EnableCors("MyPolicy")]
   public class JsonController
   {
     [HttpPut]
@@ -20,7 +24,8 @@ namespace Chakra.Web.Controllers
       try
       {
         var result = Executor.ExecuteSnippet(snippet.Split(Environment.NewLine));
-        return ConverterResponse.ForSuccess(result);
+        var responseObject = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(result);
+        return ConverterResponse.ForSuccess(responseObject);
       }
       catch (DynamicCompilationException e)
       {

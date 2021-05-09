@@ -39,9 +39,21 @@ namespace Chakra.Web.Test.Api
 
       var expected = new
       {
-        json="{\"user\":{\"name\":\"one\",\"id\":302},\"friends\":[{\"name\":\"one\",\"id\":301},{\"name\":\"two\",\"id\":303},{\"name\":\"three\",\"id\":304}],\"salary\":3232.30,\"active\":true}"
+          json = new
+          {
+              user = new {name = "one", id = 302},
+              // friends = new[]
+              // {
+              //         new {name = "one", id = 301},
+              //         new {name = "two", id = 303},
+              //         new {name = "three", id = 304},
+              // },
+              salary = 3232.30m,
+              active = true
+          },
+          errorLineNumber = 0
       };
-      
+
       var response = await SendRequest("/convert", request, _client.PutAsync);
       var responseString = await response.Content.ReadAsStringAsync();
       var actual = JsonConvert.DeserializeAnonymousType(responseString, expected);

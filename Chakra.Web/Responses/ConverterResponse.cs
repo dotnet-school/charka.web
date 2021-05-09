@@ -2,18 +2,18 @@ namespace Chakra.Web.Responses
 {
   public class ConverterResponse
   {
-    public string Json { get; }
+    public object Json { get; }
     public string Error { get; }
     public int ErrorLineNumber { get; }
     
-    private ConverterResponse(string json, string error, int errorLineNumber)
+    private ConverterResponse(object json, string error, int errorLineNumber)
     {
       Json = json;
       Error = error;
       ErrorLineNumber = errorLineNumber;
     }
 
-    public static ConverterResponse ForSuccess(string json)
+    public static ConverterResponse ForSuccess(object json)
     {
       return new ConverterResponse(json, null, 0);
     }
